@@ -3,6 +3,7 @@ import asyncio
 import json
 import os
 import re
+import secrets
 import string
 import sys
 from typing import Dict
@@ -17,7 +18,6 @@ from prompt_toolkit.history import InMemoryHistory
 from prompt_toolkit.key_binding import KeyBindings
 from rich.console import Console
 from rich.markdown import Markdown
-import secrets
 
 
 def __create_session() -> PromptSession:
