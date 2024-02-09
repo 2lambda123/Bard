@@ -2,7 +2,6 @@ import argparse
 import asyncio
 import json
 import os
-import random
 import re
 import string
 import sys
@@ -18,6 +17,7 @@ from prompt_toolkit.history import InMemoryHistory
 from prompt_toolkit.key_binding import KeyBindings
 from rich.console import Console
 from rich.markdown import Markdown
+import secrets
 
 
 def __create_session() -> PromptSession:
@@ -126,7 +126,7 @@ class AsyncChatbot:
             "Origin": "https://bard.google.com",
             "Referer": "https://bard.google.com/",
         }
-        self._reqid = int("".join(random.choices(string.digits, k=4)))
+        self._reqid = int("".join(secrets.SystemRandom().choices(string.digits, k=4)))
         self.proxy = proxy
         self.conversation_id = ""
         self.response_id = ""
